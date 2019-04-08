@@ -1,0 +1,8 @@
+<!--
+ - Created by Turbo_000 on 12/16/2018.
+ -->
+
+<aura:component controller="EightBallController" implements="flexipage:availableForAllPageTypes" description="EightBall">
+    <aura:attribute name="question" type="String" default="who am i?"/>
+    <lightning:button variant="brand" label="Submit" onclick="{!c.handleClick}"/>
+</aura:component>
