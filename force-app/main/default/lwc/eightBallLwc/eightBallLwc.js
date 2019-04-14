@@ -8,6 +8,7 @@ export default class EightBallLwc extends LightningElement {
     @track question;
     @api answer;
     @track jsonResponse;
+    @api backgroundColor;
 
     handleChange(event){
         this.question = event.target.value;
@@ -21,6 +22,7 @@ export default class EightBallLwc extends LightningElement {
                 this.jsonResponse = JSON.parse(this.response);
                 this.answer = this.jsonResponse.magic.answer;
                 this.type = this.jsonResponse.magic.type;
+                this.setBackgroundColor();
                 
                 
                 this.error = undefined;
@@ -30,5 +32,17 @@ export default class EightBallLwc extends LightningElement {
                 this.response = undefined;
             });
         
+    }
+
+    setBackgroundColor(){
+        if(this.type === 'Affirmative'){
+            this.backgroundColor = 'slds-text-color_success';
+        }
+        else if(this.type === 'Neutral'){
+            this.backgroundColor = 'slds-text-color_weak';
+        }
+        else{
+            this.backgroundColor = 'slds-text-color_error';
+        }
     }
 }
