@@ -1,0 +1,14 @@
+<!-- apexImperativeMethod.html -->
+<template>
+    <lightning-card title="Magic Eight Ball" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <p class="slds-m-bottom_small">
+                <lightning-input label="Question" value={question} onchange={handleChange}></lightning-input>
+                <lightning-button label="Ask" onclick={askQuestion}></lightning-button>
+            </p>
+            <p>
+                <lightning-formatted-text value={answer}></lightning-formatted-text>
+            </p>
+        </div>
+    </lightning-card>
+</template>
