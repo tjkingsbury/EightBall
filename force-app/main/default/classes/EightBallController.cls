@@ -3,7 +3,6 @@ public with sharing class EightBallController {
 
     @AuraEnabled
     public static String askEightBall(String question){
-        System.debug('question: ' + question);
         HttpRequest req = new HttpRequest();
         req.setEndpoint('https://8ball.delegator.com/magic/JSON/' + question);
         req.setMethod('GET');
